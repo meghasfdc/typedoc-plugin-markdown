@@ -10,7 +10,7 @@ export function hierachyLevel(this: ReferenceType, level: any, isTarget: boolean
   level = level || 0;
   spaceCount = spaceCount || 0;
 
-  const symbol = spaces(spaceCount) + ' *';
+  const symbol = spaces(spaceCount) + '*';
 
   return symbol;
 }
