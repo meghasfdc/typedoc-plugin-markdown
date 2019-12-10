@@ -2,11 +2,11 @@
 
 {{#if ../isTarget}}
 
-{{hierachyLevel}} **{{this}}**
+{{hierachyLevel ../level true}} **{{this}}**
 
 {{else}}
 
-{{hierachyLevel}} {{{type}}}
+{{hierachyLevel ../level false}} {{{type}}}
 
 {{/if}}
 
@@ -14,7 +14,7 @@
 
 {{#with ../next}}
 
-{{> hierarchy}}
+{{> hierarchy level=(inc ../level)}}
 
 {{/with}}
 

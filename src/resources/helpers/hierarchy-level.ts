@@ -1,9 +1,16 @@
-import { DeclarationReflection, ReferenceType } from 'typedoc/dist/lib/models';
+import { ReferenceType } from 'typedoc/dist/lib/models';
 
 import { spaces } from './spaces';
 
-export function hierachyLevel(this: ReferenceType) {
-  const reflection = this.reflection as DeclarationReflection;
-  const symbol = reflection && reflection.extendedTypes ? `${spaces(2)}↳` : '*';
+export function hierachyLevel(this: ReferenceType, level: any, isTarget: boolean) {
+  let spaceCount = parseInt(level, 10) * 2;
+  if (!isTarget) {
+    spaceCount = spaceCount * 2;
+  }
+  level = level || 0;
+  spaceCount = spaceCount || 0;
+
+  const symbol = spaces(spaceCount) + ' *';
+
   return symbol;
 }
