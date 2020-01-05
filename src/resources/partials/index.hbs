@@ -8,21 +8,29 @@
 
 {{#each categories}}
 
+{{#ifShowIndexGroup}}
+
 {{heading 3}} {{title}} {{../title}}
 
 {{#each children}}
 * [{{{name}}}]({{relativeURL url}})
 {{/each}}
 
+{{/ifShowIndexGroup}}
+
 {{/each}}
 
 {{else}}
+
+{{#ifShowIndexGroup}}
 
 {{heading 3}} {{title}}
 
 {{#each children}}
 * [{{{name}}}]({{relativeURL url}})
 {{/each}}
+
+{{/ifShowIndexGroup}}
 
 {{/if}}
 

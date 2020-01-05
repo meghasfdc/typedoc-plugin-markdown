@@ -1,11 +1,7 @@
-{{#ifCond kindString '==' 'Module'}}
+{{#ifShowIndex}}
+
 {{> index}}
 
-{{> members}}
-{{else}}
-{{#ifIndexes}}
-{{> index}}
+{{/ifShowIndex}}
 
-{{/ifIndexes}}
-{{> members}}
-{{/ifCond}}
+{{> members kindString=kindString}}

@@ -14,13 +14,11 @@
 
 {{/if}}
 
-{{#ifIsLiteralType true}}
+{{#ifIsLiteralType}}
 
 {{{literal}}}
 
-{{/ifIsLiteralType}}
-
-{{#ifIsLiteralType false}}
+{{else}}
 
 {{#each children}}
 
@@ -52,13 +50,11 @@
 
 ## type.declaration
 
-{{#ifIsLiteralType true}}
+{{#ifIsLiteralType}}
 
 {{{literal}}}
 
-{{/ifIsLiteralType}}
-
-{{#ifIsLiteralType false}}
+{{else}}
 
 {{> parameter}}
 

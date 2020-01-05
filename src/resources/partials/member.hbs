@@ -32,15 +32,13 @@
 
 {{#unless hasOwnDocument}}
 
-{{#ifIsLiteralType true}}
+{{#ifIsLiteralType}}
 
 {{> member.declaration}}
 
 {{{literal}}}
 
-{{/ifIsLiteralType}}
-
-{{#ifIsLiteralType false}}
+{{else}}
 
 {{> member hideHr=true}}
 

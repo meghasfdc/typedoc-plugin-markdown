@@ -20,7 +20,7 @@
 
 **Parameters:**
 
-{{#ifHasTypeDeclarations true}}
+{{#ifHasTypeDeclarations}}
 
 {{#each parameters}}
 
@@ -54,9 +54,7 @@
 
 {{/each}}
 
-{{/ifHasTypeDeclarations}}
-
-{{#ifHasTypeDeclarations false}}
+{{else}}
 
 {{#with parameters}}
 

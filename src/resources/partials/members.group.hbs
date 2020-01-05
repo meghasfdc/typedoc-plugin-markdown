@@ -8,15 +8,7 @@ ___
 
 {{heading 2}} {{title}} {{../title}}
 
-{{#each children}}
-
-{{#unless hasOwnDocument}}
-
-{{> member}}
-
-{{/unless}}
-
-{{/each}}
+{{> members.children}}
 
 {{/each}}
 
@@ -24,14 +16,18 @@ ___
 
 {{heading 2}} {{title}}
 
-{{#each children}}
+{{#ifShowPropertyTable}}
 
-{{#unless hasOwnDocument}}
+{{#with children}}
 
-{{> member}}
+{{{propertyTable}}}
 
-{{/unless}}
+{{/with}}
 
-{{/each}}
+{{else}}
+
+{{> members.children}}
+
+{{/ifShowPropertyTable}}
 
 {{/if}}
