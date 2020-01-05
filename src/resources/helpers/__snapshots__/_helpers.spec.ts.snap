@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Helpers declarationTitle helper should compi;e 1`] = `"**color**: *string* = \\"blue\\""`;
+exports[`Helpers declarationTitle helper should compi;e 1`] = `"**color**? : *string*"`;
 
 exports[`Helpers literal helper should compile object literal 1`] = `
 "!spaces* **valueA**: *number* = 100

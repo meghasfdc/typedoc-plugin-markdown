@@ -11,6 +11,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
     const hideBreadcrumbs = this.application.options.getValue('hideBreadcrumbs');
     const hideIndexes = this.application.options.getValue('hideIndexes');
     const hideSourceFiles = this.application.options.getValue('hideSources');
+    const compact = this.application.options.getValue('compactOutput');
 
     MarkdownTheme.handlebars.registerHelper('ifNamedAnchors', function(options) {
       return namedAnchors ? options.fn(this) : options.inverse(this);
@@ -26,6 +27,10 @@ export class OptionsComponent extends ContextAwareRendererComponent {
 
     MarkdownTheme.handlebars.registerHelper('ifSources', function(options) {
       return hideSourceFiles ? options.inverse(this) : options.fn(this);
+    });
+
+    MarkdownTheme.handlebars.registerHelper('ifCompactOutput', function(options) {
+      return compact ? options.inverse(this) : options.fn(this);
     });
   }
 }

@@ -60,5 +60,12 @@ export = (PluginHost: Application) => {
     type: ParameterType.Boolean,
   });
 
+  app.options.addDeclaration({
+    component: 'markdown',
+    help: 'Markdown Plugin:  Render Interface properties in tables and remove in-page index items.',
+    name: 'compactOutput',
+    type: ParameterType.Boolean,
+  });
+
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };
