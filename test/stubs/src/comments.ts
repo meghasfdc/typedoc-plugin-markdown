@@ -59,3 +59,21 @@ export function commentsInReturn() {
 export function functionWithDocLink() {
   return;
 }
+
+/**
+ * Shorthand switch/case helper function. Cases arguments list is a tuple
+ * consisting of case (`T`) and returned result (`R`). Returns a function where a default value is provided.
+ *
+ * @param value - Value to test against
+ * @param cases - Tuple of case and the result if `value` and `case` is equal
+ * @returns Function for which to provide the default value
+ */
+export const swtch = <T, R>(value: T, ...cases: Array<[T, R]>) => (def: R) => {
+  for (const c of cases) {
+    if (c[0] === value) {
+      return c[1];
+    }
+  }
+
+  return def;
+};

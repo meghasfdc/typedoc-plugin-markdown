@@ -37,6 +37,10 @@ export function functionWithParameters(paramZ: string, paramG: any, paramA: Obje
   return 0;
 }
 
+export function functionWithTypeDeclarations(paramZ: string, paramG: any, paramA: { a: number; b: string }): number {
+  return 0;
+}
+
 /**
  * This is a function that is assigned to a variable.
  *
@@ -130,7 +134,7 @@ export function moduleFunction(arg: string): string {
 /**
  * This is the module extending the function moduleFunction().
  */
-export module moduleFunction {
+export namespace moduleFunction {
   /**
    * This variable is appended to a function.
    */
