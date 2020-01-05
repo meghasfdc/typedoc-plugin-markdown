@@ -28,7 +28,7 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 - The `--plugin` arg is optional - if omitted all installed plugins will run.
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- The plugin needs to be executed from the same location as `typedoc`. Either run as an npm script or make sure to run `npx typedoc`.
+- The plugin needs to be executed from the same location as Typedoc. Either run as an npm script or make sure to run `npx typedoc`.
 
 ## Arguments
 
@@ -42,6 +42,8 @@ The following arguments can be used in addition to the default [TypeDoc argument
   Do not print source file link rendering.
 - `--hideBreadcrumbs`<br>
   Do not print breadcrumbs.
+- `--compactOutput`<br>
+  Render Interface properties in tables and remove in-page index items.
 
 ## License
 
