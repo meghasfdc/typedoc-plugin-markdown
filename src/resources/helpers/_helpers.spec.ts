@@ -52,58 +52,37 @@ describe(`Helpers`, () => {
   });
 
   describe(`ifHasTypeDeclarations helper`, () => {
-    test(`should return true if ifHasTypeDeclarations is true and expectation is truthy`, () => {
+    test(`should return true if ifHasTypeDeclarations is true`, () => {
       const result = Handlebars.helpers.ifHasTypeDeclarations.call(
         project.findReflectionByName('drawText').signatures[0],
-        true,
         handlebarsHelpersOptionsStub,
       );
       expect(result).toEqual('true');
     });
 
-    test(`should return true if ifHasTypeDeclarations is false and expectation is truthy`, () => {
+    test(`should return false if ifHasTypeDeclarations is false`, () => {
       const data = project.findReflectionByName('exportedFunction');
-      const result = Handlebars.helpers.ifHasTypeDeclarations.call(
-        data.signatures[0],
-        true,
-        handlebarsHelpersOptionsStub,
-      );
+      const result = Handlebars.helpers.ifHasTypeDeclarations.call(data.signatures[0], handlebarsHelpersOptionsStub);
       expect(result).toEqual('false');
-    });
-
-    test(`should return true if ifHasTypeDeclarations is false and expectation is falsey`, () => {
-      const data = project.findReflectionByName('exportedFunction');
-      const result = Handlebars.helpers.ifHasTypeDeclarations.call(
-        data.signatures[0],
-        false,
-        handlebarsHelpersOptionsStub,
-      );
-      expect(result).toEqual('true');
     });
   });
 
   describe(`ifIsLiteralType helper`, () => {
-    test(`should return true if isLiteralType is is true and expectation is truthy`, () => {
+    test(`should return true if isLiteralType is is true `, () => {
       const data = project.findReflectionByName('objectLiteral');
-      const result = Handlebars.helpers.ifIsLiteralType.call(data, true, handlebarsHelpersOptionsStub);
+      const result = Handlebars.helpers.ifIsLiteralType.call(data, handlebarsHelpersOptionsStub);
       expect(result).toEqual('true');
     });
 
-    test(`should return false if isLiteralType is is true and expectation is falsey`, () => {
-      const data = project.findReflectionByName('objectLiteral');
-      const result = Handlebars.helpers.ifIsLiteralType.call(data, false, handlebarsHelpersOptionsStub);
-      expect(result).toEqual('false');
-    });
-
-    test(`should return true if isLiteralType is is false and expectation is falsey`, () => {
+    test(`should return false if isLiteralType is is false`, () => {
       const data = project.findReflectionByName('color');
-      const result = Handlebars.helpers.ifIsLiteralType.call(data, false, handlebarsHelpersOptionsStub);
-      expect(result).toEqual('true');
+      const result = Handlebars.helpers.ifIsLiteralType.call(data, handlebarsHelpersOptionsStub);
+      expect(result).toEqual('false');
     });
   });
 
   describe(`ifParentIsObjectLiteral helper`, () => {
-    test(`should return true if ifParentIsObjectLiteral is is true and expectation is truthy`, () => {
+    test(`should return true if ifParentIsObjectLiteral is is true `, () => {
       const data = {
         parent: {
           parent: {
@@ -111,20 +90,14 @@ describe(`Helpers`, () => {
           },
         },
       };
-      const result = Handlebars.helpers.ifParentIsObjectLiteral.call(data, true, handlebarsHelpersOptionsStub);
+      const result = Handlebars.helpers.ifParentIsObjectLiteral.call(data, handlebarsHelpersOptionsStub);
       expect(result).toEqual('true');
     });
 
-    test(`should return false if ifParentIsObjectLiteral is is false and expectation is truthy`, () => {
+    test(`should return false if ifParentIsObjectLiteral is is false and expectation is false`, () => {
       const data = {};
-      const result = Handlebars.helpers.ifParentIsObjectLiteral.call(data, true, handlebarsHelpersOptionsStub);
+      const result = Handlebars.helpers.ifParentIsObjectLiteral.call(data, handlebarsHelpersOptionsStub);
       expect(result).toEqual('false');
-    });
-
-    test(`should return true if ifParentIsObjectLiteral is is false and expectation is falsey`, () => {
-      const data = {};
-      const result = Handlebars.helpers.ifParentIsObjectLiteral.call(data, false, handlebarsHelpersOptionsStub);
-      expect(result).toEqual('true');
     });
   });
 
